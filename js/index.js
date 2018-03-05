@@ -13,7 +13,7 @@
 */
 function update(swiper){
         console.log(swiper);
-        swiper.activeIndex === 5  ? setTimeout(function(){S.UI.simulate('小仙女| 我想 | 对你说 | 最好的样子 | 就是|| 在一起♡');},3000) : '';
+        swiper.activeIndex === 5  ? setTimeout(function(){S.UI.simulate('小仙女| 最好的样子就是 || 在一起♡');},3000) : '';
 }       
 var S = {
   init: function () {
