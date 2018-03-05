@@ -91,6 +91,12 @@
 			50%  {top: 77%;}
 			100% {top: 76%;}
 		}
+		@keyframes arrow3
+		{
+			0%   {top: 69%;}
+			50%  {top: 70%;}
+			100% {top: 69%;}
+		}
 		.music{
 			width: 50px;
 			position: absolute;
@@ -247,7 +253,7 @@
 
 
 			<div
-					data-slide-in="at 5000 from fadeInLeft use swing during 2500" class="ani arrow2"  style='
+					data-slide-in="at 6000 from fadeInLeft use swing during 2500" class="ani arrow2"  style='
 					        position: relative;
 						    top: 76%;
 						    left: 50%;
@@ -273,7 +279,24 @@
 				</div>
 			</div>
 			<div
-					data-slide-in="at 2300 from fadeInRight use swing during 2500" class="ani showcase" style='
+					data-slide-in="at 2800 from fadeInLeft use swing during 2500" class="ani showcase" style='
+					        position: relative;
+						    top: 53%;
+						    left: 50%;
+						    width: 600px;
+						    color: #185a9d;
+						    z-index:100;
+						    line-height: 43px;
+						    font-size: 35px;
+						    margin-left: -300px;'>
+				<p class="abc">
+					简单温暖<br/>
+					不离不弃
+				</p>
+
+			</div>
+			<div
+					data-slide-in="at 3000 from fadeInRight use swing during 2500" class="ani showcase" style='
 					        position: relative;
 						    top: 25%;
 						    left: 50%;
@@ -298,7 +321,25 @@
 			<div
 					data-slide-in="at 3500 from fadeInLeft use swing during 2500" class="ani showcase" style='
 					        position: relative;
-						    top: 65%;
+						    top: 63%;
+						    left: 50%;
+						    width: 600px;
+						    color: #185a9d;
+						    line-height: 43px;
+						    font-size: 35px;
+						    margin-left: -300px;'>
+				<p class="abc">
+					不会将就自己,
+					也不用刻意讨好迎合对方,
+					在这段感情里,
+					两个人都能做最真实和最舒服的自己
+				</p>
+
+			</div>
+			<div
+					data-slide-in="at 1000 from fadeInLeft use swing during 2500" class="ani showcase" style='
+					        position: relative;
+						    top: -12%;
 						    left: 50%;
 						    width: 600px;
 						    color: #185a9d;
@@ -307,39 +348,19 @@
 						    margin-left: -300px;'>
 				<p class="abc">
 					相遇出于缘分<br/>
-					相恋出于爱情<br/>
-					不会将就自己<br/>
-					也不用刻意讨好迎合对方<br/>
-					在这段感情里<br/>
-					两个人都能做最真实和最舒服的自己
+					相恋出于爱情
 				</p>
 
 			</div>
-			<!-- <div
-           data-slide-in="at 3000 from fadeInLeft use swing during 2500" class="ani showcase" style='
-                          position: relative;
-                          top: 37%;
-                          left: 50%;
-                          width: 600px;
-                          color: #185a9d;
-                          line-height: 43px;
-                          font-size: 35px;
-                          margin-left: -300px;'>
-                      <p class="abc">
-                          相遇出于缘分<br/>
-                          相恋出于爱情
-                      </p>
-
-            </div> -->
 			<div
-					data-slide-in="at 5000 from fadeInLeft use swing during 2500" class="ani arrow1"  style='
+					data-slide-in="at 5000 from fadeInLeft use swing during 2500" class="ani arrow3"  style='
 					        position: relative;
-						    top: 71%;
+						    top: 69%;
 						    left: 50%;
 						    width: 100px;
 						    line-height: 42px;
 						    font-size: 35px;
-						    -webkit-animation: arrow1 2s linear infinite;
+						    -webkit-animation: arrow3 2s linear infinite;
 						    margin-left: -50px;'>
 				<img  src="img/arrow.png" style='width:100px;'>
 
@@ -487,10 +508,12 @@
 			$(".arrow img").css({display:"none"})
 			$(".arrow1 img").css({display:"none"})
 			$(".arrow2 img").css({display:"none"})
+			$(".arrow3 img").css({display:"none"})
 			setTimeout(function(){
 				$(".arrow img").fadeIn(1500).css({display:'block'})
 				$(".arrow1 img").fadeIn(1500).css({display:'block'})
 				$(".arrow2 img").fadeIn(1500).css({display:'block'})
+				$(".arrow3 img").fadeIn(1500).css({display:'block'})
 			},3500)
 		},
 		direction: 'vertical',
