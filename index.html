@@ -93,9 +93,9 @@
 		}
 		@keyframes arrow3
 		{
-			0%   {top: 69%;}
-			50%  {top: 70%;}
-			100% {top: 69%;}
+			0%   {top: 65%;}
+			50%  {top: 66%;}
+			100% {top: 65%;}
 		}
 		.music{
 			width: 50px;
@@ -281,7 +281,7 @@
 			<div
 					data-slide-in="at 2800 from fadeInLeft use swing during 2500" class="ani showcase" style='
 					        position: relative;
-						    top: 53%;
+						    top: 56%;
 						    left: 50%;
 						    width: 600px;
 						    color: #185a9d;
@@ -321,7 +321,7 @@
 			<div
 					data-slide-in="at 3500 from fadeInLeft use swing during 2500" class="ani showcase" style='
 					        position: relative;
-						    top: 63%;
+						    top: 60%;
 						    left: 50%;
 						    width: 600px;
 						    color: #185a9d;
@@ -355,7 +355,7 @@
 			<div
 					data-slide-in="at 5000 from fadeInLeft use swing during 2500" class="ani arrow3"  style='
 					        position: relative;
-						    top: 69%;
+						    top: 65%;
 						    left: 50%;
 						    width: 100px;
 						    line-height: 42px;
@@ -520,6 +520,11 @@
 		loop: true,
 	})
 
+	
+
+</script>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> 
+<script>
 	$(function(){
 		var x = document.getElementById("media");
 		$("#audio_btn").click(function(){
@@ -533,9 +538,24 @@
 			}
 		})
 	});
-
-</script>
-
+	function autoPlayAudio() {
+		wx.config({
+			// 配置信息, 即使不正确也能使用 wx.ready
+			debug: false,
+			appId: '',
+			timestamp: 1,
+			nonceStr: '',
+			signature: '',
+			jsApiList: []
+		});
+		wx.ready(function() {
+			var globalAudio=document.getElementById("media");
+			globalAudio.play();
+		});
+	};
+		// 解决ios音乐不自动播放的问题
+	autoPlayAudio();
+</script> 
 
 </body>
 </html>
