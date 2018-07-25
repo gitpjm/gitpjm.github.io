@@ -14,18 +14,21 @@
             margin: 0;
             padding: 0;
             background: #ffe;
-            overflow: auto
+            overflow: auto;
+            height: 100%;
+            background:-webkit-linear-gradient(top,#43cea2 ,#185a9d);/*new gradient for Webkit*/
+            overflow: hidden;
         }
-
         #mainDiv {
             width: 100%;
-            height: 100%
+            height: 100%;
+            overflow: hidden;
         }
 
         #loveHeart {
             float: left;
             width: 670px;
-            height: 625px
+            height: 950px
         }
 
         #garden {
@@ -3311,21 +3314,21 @@
                 f = "0" + f
             }
             var a = '<span class="digit">' + g + '</span>天';
-            var b = '<span class="digit">' + g + '</span> days <span class="digit">' + b + '</span> hours <span class="digit">' + d + '</span> minutes <span class="digit">' + f + "</span> seconds";
+            var b = '<span class="digit">' + b + '</span> 小时 <span class="digit">' + d + '</span> 分 <span class="digit">' + f + "</span> 秒  ...";
             $("#elapseClock").html(a)
             $("#elapseClock1").html(b)
         }
 
         function showMessages() {
-            $("#messages").fadeIn(1000, function () {
+            $("#messages").fadeIn(500, function () {
                 showLoveU()
             })
         }
 
         function adjustWordsPosition() {
             $("#words").css("position", "absolute");
-            $("#words").css("top", $("#garden").position().top + 195);
-            $("#words").css("left", $("#garden").position().left + 70)
+            $("#words").css("top", $("#garden").position().top + 295);
+            $("#words").css("left", $("#garden").position().left + 90)
         }
 
         function adjustCodePosition() {
@@ -3333,7 +3336,8 @@
         }
 
         function showLoveU() {
-            $("#loveu").fadeIn(1000)
+            $("#loveu").fadeIn(500)
+            $("#love").fadeIn(3000)
         };
     </script>
     <script>
@@ -3480,10 +3484,10 @@
             /*对矩形空间内进行刷新操作*/
             cxt.clearRect(0,0,window_width,window_height);
 
-            // var hours = parseInt(curShowTimeSeconds/3600);
-            var hours = 11;
-            //var minutes = parseInt((curShowTimeSeconds-hours*3600)/60);
-            var minutes = 11;
+            var hours = parseInt(curShowTimeSeconds/3600);
+            //var hours = 11;
+            var minutes = parseInt((curShowTimeSeconds-hours*3600)/60);
+            //var minutes = 11;
             var seconds = curShowTimeSeconds%60;
 
             renderDigit(margin_left,margin_top,parseInt(hours/10),cxt);
@@ -3661,6 +3665,7 @@
             ];
     </script>
     <style>
+
         .divcss5 {
             width: 0px;
             height: 0px;
@@ -3677,10 +3682,25 @@
             color: orange;
             text-align: center;
             font-size: 60px;
+            margin-top: 50px;
+            cursor: pointer;
         }
         #loveu {
             font-size:20px;
             color: orange;
+            position: absolute;
+            top: -30px;
+        }
+        #love{
+            position: absolute;
+            top: 233px;
+            left: 218px;
+            font-size: 35px;
+            display: none;
+            color: #1545e6;
+        }
+        #canvas {
+         display: none;
         }
     </style>
 
@@ -3690,44 +3710,27 @@
     <div id="content" style="width: 1110px; height: 625px; margin-top: 153.5px; margin-left: 10px;">
         <!--<div id="code" style="margin-top: 112.5px;">-->
 				<!--<span class="comments">-->
-                    <!--<p>她的名字,你的出现，占满了我的视线，我愿跟随你永远</p>-->
-                    <!--<p>自从遇见你那天开始，我的心就像跌进深深的湖水，推不开躲不掉，心_</p>-->
+                    <!--<p>小仙女</p>-->
+                    <!--<p>小仙女</p>-->
                 <!--</span>-->
         <!--</div>-->
         <div id="loveHeart">
             <canvas id="garden" width="670" height="625"></canvas>
             <div id="words" style="position: absolute; top: 348.5px; left: 520px;">
                 <div id="messages">
-                    I LOVE YOU ♥ ...
+                    I LOVE YOU...
                     <div id="elapseClock"></div>
                     <div id="elapseClock1"></div>
                 </div>
+                <div id="love">
+                    珍惜
+                </div>
                 <div id="loveu">
-                    小仙女<br>
+                    <span style="color:#de6189"></span>小仙女♥ <br>
                     <!--<div class="signature">你的名字</div>-->
                 </div>
             </div>
         </div>
-
-        <!--<div class="bg1">-->
-            <!--<div class="main">-->
-                <!--<div>-->
-
-                    <!--<div style="text-align:center">-->
-                        <!--<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="//music.163.com/outchain/player?type=2&amp;id=28029509&amp;auto=1&amp;height=32"></iframe>-->
-                    <!--</div>-->
-                    <!--<div class="divcss5">-->
-                        <!--Copyright ? 2015 <a href="http://51bbw.cn" target="_blank">我要表白网</a><br>-->
-
-                    <!--</div>-->
-                <!--</div>-->
-
-                <!--<div>-->
-
-
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
 
     </div>
 
@@ -3760,11 +3763,22 @@
         timeElapse(together);
         setInterval(function () {
             timeElapse(together);
-        }, 0);
+        }, 1000);
 
         adjustCodePosition();
         $("#code").typewriter();
     }
+    var show = false
+    $("#elapseClock").click(function () {
+        show = !show;
+        if(show) {
+            $("#elapseClock1").fadeIn()
+        }
+        else {
+            $("#elapseClock1").fadeOut()
+        }
+
+    })
 </script>
 </embed>
 
