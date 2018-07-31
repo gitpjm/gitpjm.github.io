@@ -2,13 +2,15 @@
 <html>
 <head>
     <title>小仙女</title>
-    <meta name="keywords"
-          content="表白网页在线制作,在线制作表白网站,表白网页,生日表白网站,阿狸表白网页,我要表白网,免费制作,表白网页生成器,2015,样式最多,情人节告白,520,七夕表白,怎么表白"/>
+    <link rel="icon" href="img/heart.ico" type="img/x-ico" />
+    <meta name="keywords"/>
 
     <meta name="description" content="你的出现，占满了我的视线，我愿跟随你永远"/>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link href="http://www.zaiyiqiba.com/aini/i/csss/default.css" tppabs="default.css" type="text/css" rel="stylesheet">
+    <style>
+        body{margin:0;padding:0;background:#ffe;overflow:auto}#mainDiv{width:100%;height:100%}#loveHeart{float:left;width:670px;height:625px}#garden{width:100%;height:100%}#elapseClock{text-align:right;margin-top:10px;margin-bottom:10px}#words{font-family:"寰蒋闆呴粦";width:505px;;color:#666}#messages{display:none;font-size:20px;}#elapseClock .digit{font-family:"寰蒋闆呴粦"}#loveu{padding:5px;margin-top:80px;margin-right:120px;text-align:right;display:none}#loveu .signature{margin-top:10px;font-style:italic}#code{float:left;width:440px;height:400px;color: #FF7383;font-size:12px;font-family:"寰蒋闆呴粦","Monaco","Bitstream Vera Sans Mono","Courier New","sans-serif";#code .string{color:#2a36ff}#code .keyword{color:#7f0055;font-weight:bold}#code .placeholder{margin-left:15px}#code
+    </style>
     <style>
         html {
         height: 100%;
@@ -3668,7 +3670,6 @@
             ];
     </script>
     <style>
-
         .divcss5 {
             width: 0px;
             height: 0px;
@@ -3688,6 +3689,9 @@
             margin-top: 50px;
             cursor: pointer;
         }
+        #code {
+            width: 200px;
+        }
         #loveu {
             font-size:20px;
             color: orange;
@@ -3705,18 +3709,51 @@
         #canvas {
          display: none;
         }
+        .comments {
+           color: orange;
+            font-size: 16px;
+        }
+        .music{
+            width: 50px;
+            position: absolute;
+            top: 43px;
+            right: 50px;
+            z-index: 1000;
+
+        }
+        .music1{
+            -webkit-animation: music 5s linear infinite;
+        }
+        .music img{
+            width:50px;
+
+        }
+        @keyframes music
+        {
+            0%{ transform:rotate(0deg); }
+            100%{ transform:rotate(360deg); }
+        }
+
     </style>
 
 <body>
 <canvas id="canvas" style="height:100px;width:300px"></canvas>
+<div class='music music1' id='audio_btn'>
+    <img src="img/music.png">
+    <audio loop src="img/music.mp3" id="media" autoplay="" preload=""></audio>
+</div>
 <div id="mainDiv">
+
     <div id="content" style="width: 1110px; height: 625px; margin-top: 153.5px; margin-left: 10px;">
-        <!--<div id="code" style="margin-top: 112.5px;">-->
-				<!--<span class="comments">-->
-                    <!--<p>小仙女</p>-->
-                    <!--<p>小仙女</p>-->
-                <!--</span>-->
-        <!--</div>-->
+        <div id="code" style="margin-top: 112.5px;">
+            <span class="comments">
+            　　<p>往后余生，风雪是你</p>
+            　　<p>春华是你，夏雨也是你</p>
+            　　<p>秋黄是你，四季冷暖是你</p>
+            　　<p>目光所致，也是你</p>
+                <!--　　<p>往后的余生，我只要你</p>-->
+            </span>
+        </div>
         <div id="loveHeart">
             <canvas id="garden" width="670" height="625"></canvas>
             <div id="words" style="position: absolute; top: 348.5px; left: 520px;">
