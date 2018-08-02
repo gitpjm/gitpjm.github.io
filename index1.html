@@ -21,7 +21,11 @@
             background: #ffe;
             overflow: auto;
             height: 100%;
-            background:-webkit-linear-gradient(top,#43cea2 ,#185a9d);/*new gradient for Webkit*/
+           /*background:-webkit-linear-gradient(top,#43cea2 ,#185a9d);*/
+            /*background:-webkit-linear-gradient(top,#000,#243b55);*/
+            /*background:-webkit-linear-gradient(top,#ff5f6d,#ffc371);*/
+            /*background:-webkit-linear-gradient(top,#eecda3 , #ef629f);*/
+            background:-webkit-linear-gradient(top,#ff7e5f   , #feb47b);
             overflow: hidden;
         }
         #mainDiv {
@@ -33,7 +37,9 @@
         #loveHeart {
             float: left;
             width: 670px;
-            height: 950px
+            height: 950px;
+            position:relative;
+            z-index:500;
         }
 
         #garden {
@@ -84,11 +90,11 @@
             font-family: "寰蒋闆呴粦", "Monaco", "Bitstream Vera Sans Mono", "Courier New", "sans-serif";
 
         #code .string {
-            color: #2a36ff
+            color: rgb(24, 90, 157)
         }
 
         #code .keyword {
-            color: #7f0055;
+            color: rgb(24, 90, 157)
             font-weight: bold
         }
 
@@ -3355,7 +3361,7 @@
         var curShowTimeSeconds = 0;/*获取当天的秒数*/
 
         var balls = [];/*小球的集合*/
-        const colors = ["#33b5e5","#0099cc","#aa66cc","#9933cc","#99cc00","#669900","#ffbb33","#ff8800","#ff4444","#cc0000"];/*颜色集合*/
+        const colors = ["#33b5e5","#0099cc","#aa66cc","#9933cc","#99cc00","#669900","#ffbb33","#ff8800","#ff4444","#cc0000",'# #feb47b'];/*颜色集合*/
 
         window.onload = function(){
             /*判断是否支持canvas,
@@ -3678,12 +3684,12 @@
         }
 
         #elapseClock1 {
-            color: orange;
+            color: rgb(24, 90, 157);
             text-align: center;
             display: none;
         }
         #elapseClock {
-            color: orange;
+            color: rgb(24, 90, 157);
             text-align: center;
             font-size: 60px;
             margin-top: 50px;
@@ -3694,7 +3700,7 @@
         }
         #loveu {
             font-size:20px;
-            color: orange;
+            color: rgb(24, 90, 157);
             position: absolute;
             top: -30px;
         }
@@ -3704,10 +3710,22 @@
             left: 210px;
             font-size: 35px;
             display: none;
-            color: #1545e6;
+            color: rgb(24, 90, 157);
+        }
+        .lover {
+            font-size:20px;
+            color: rgb(24, 90, 157);
+            position: relative;
+            top: -90px;
+            left: 350px;
         }
         #canvas {
-         display: none;
+            height: 160px;
+            width: 300px;
+            position: fixed;
+            top: 90px;
+            left: 50%;
+            margin-left: -150px;
         }
         .comments {
            color: #fff;
@@ -3737,7 +3755,7 @@
     </style>
 
 <body>
-<canvas id="canvas" style="height:100px;width:300px"></canvas>
+<canvas id="canvas"></canvas>
 <div class='music music1' id='audio_btn'>
     <img src="img/music.png">
     <audio loop src="img/music1.m4a" id="media" autoplay="" preload=""></audio>
@@ -3758,7 +3776,7 @@
             <canvas id="garden" width="670" height="625"></canvas>
             <div id="words" style="position: absolute; top: 348.5px; left: 520px;">
                 <div id="messages">
-                    I LOVE YOU...
+                    I LOVE YOU
                     <div id="elapseClock"></div>
                     <div id="elapseClock1"></div>
                 </div>
@@ -3766,7 +3784,8 @@
                     珍惜
                 </div>
                 <div id="loveu">
-                    <span style="color:#de6189"></span>小仙女♥ <br>
+                    <!--<span></span>小仙女<img src="img/heart.ico" style="position:relative;top: 10px;left: 6px;"> <br>-->
+                    <span style="position: relative;top: -70px;left: 350px;">小仙女<img src="img/heart.ico" style="position:relative;top: 10px;left: 6px;"> </span>
                     <!--<div class="signature">你的名字</div>-->
                 </div>
             </div>
@@ -3780,7 +3799,7 @@
     var offsetX = $("#loveHeart").width() / 2;
     var offsetY = $("#loveHeart").height() / 2 - 55;
     var together = new Date();
-    var strs = "2018-02-14 08:00:00";
+    var strs = "2018-02-14 08:08:00";
     var nowTime = new Date();
     var together = new Date(strs.replace(/-/g, "/"));
 
